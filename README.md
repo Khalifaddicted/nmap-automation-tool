@@ -29,6 +29,7 @@ Improved readability using **colorama**.
 
 ### ✔ Error Handling
 Detects:
+
 - Missing files  
 - Invalid targets  
 - Empty output  
@@ -42,32 +43,39 @@ Easy to use, even for beginners.
 ## 📦 Requirements
 
 Install Nmap:
+
 sudo apt install nmap
 
 
 Install Python dependencies:
+
 pip install colorama
 
 
 ---
 
 🛠 Installation
+
 - Clone the repository:
-git clone https://github.com/Khalifaddicted/nmap-automation-tool.git
+- git clone https://github.com/Khalifaddicted/nmap-automation-tool.git
 
 - Navigate into the folder:
+- 
 cd nmap-automation-tool
 
 - Install dependencies:
+- 
 pip install colorama
 
 ## ▶️ Usage
 
 Run the tool:
+
 python3 nmap_auto.py
 
 
 Menu:
+
 [1] Quick Scan [2] Full Scan [3] Stealth Scan [4] OS Detection [5] Vulnerability Scan [6] Port Range Scan [7] Multi-Target Scan (file) [8] Exi
 
 
@@ -92,11 +100,14 @@ Menu:
 
 
 ⚙️ How It Works
+
 The tool is built around a modular and organized structure to make scanning simple, reliable, and automated.
 🔹 1. Menu System
+
 A clean text-based interface guides the user through different scan options.
 Each menu choice triggers a specific scan function.
 🔹 2. Scan Functions
+
 Each scan mode is handled by its own function:
 - Quick Scan → Fast scan of common ports
 - Full Scan → Service detection, OS detection, aggressive scan
@@ -107,6 +118,7 @@ Each scan mode is handled by its own function:
 This modular design keeps the code clean and easy to expand.
 
 🔹 3. Logging System
+
 Every scan result is automatically saved in the logs/ folder with a timestamped filename:
 
 logs/scan_YYYY-MM-DD_HH-MM-SS.txt
@@ -114,6 +126,7 @@ logs/scan_YYYY-MM-DD_HH-MM-SS.txt
 This ensures no scan results are lost and makes it easy to track historical scans.
 
 🔹 4. Multi-Target Engine
+
 The tool can read a file containing multiple IPs/domains and scan them one by one.
 This is useful for:
 - Reconnaissance
@@ -121,6 +134,7 @@ This is useful for:
 - Bulk testing
 
 🔹 5. Error Handling
+
 The tool checks for:
 - Missing files
 - Invalid targets
@@ -131,6 +145,7 @@ This prevents crashes and improves reliability.
 ---
 
 🚀 Future Improvements
+
 Planned enhancements for upcoming versions of the tool:
 - Add multi-threading for faster parallel scanning
 - Add HTML or JSON report output
@@ -147,11 +162,13 @@ These improvements will make the tool more powerful, scalable, and user-friendly
 ---
 
 🧩 Version
+
 Current Version: v1.0.0
 
 ---
 
 📄 License
+
 This project is licensed under the MIT License.
 See the LICENSE file for details
 
