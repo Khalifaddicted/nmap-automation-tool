@@ -1,3 +1,5 @@
 scan_results.txt
 __pycache__/
 *.pyc
+logs/
+
