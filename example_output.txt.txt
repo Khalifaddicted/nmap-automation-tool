@@ -1,0 +1,6 @@
+Starting Nmap 7.94 ( https://nmap.org )
+Nmap scan report for scanme.nmap.org
+Host is up.
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
