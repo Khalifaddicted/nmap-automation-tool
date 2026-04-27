@@ -82,9 +82,9 @@ Menu:
 
 
 ### 🔹 Logs Folder
-<img width="1920" height="962" alt="Screenshot 2026-04-27 141455" src="https://github.com/user-attachments/assets/807658ab-7e92-4c99-bcf8-336876cf8cde" />
-<img width="1402" height="288" alt="Screenshot 2026-04-27 141405" src="https://github.com/user-attachments/assets/70396dc4-cde4-43a8-915f-57393f8aba80" />
-<img width="876" height="618" alt="Screenshot 2026-04-27 140121" src="https://github.com/user-attachments/assets/29430947-bfe2-4fbe-9067-bc04b2066e15" />
+<img width="876" height="618" alt="Screenshot 2026-04-27 140121" src="https://github.com/user-attachments/assets/19c18b9b-d8b7-4fa7-bd11-4ec92da6eb34" />
+<img width="1402" height="288" alt="Screenshot 2026-04-27 141405" src="https://github.com/user-attachments/assets/ae5835c7-fddd-469a-b720-b5b65b581e28" />
+<img width="1920" height="962" alt="Screenshot 2026-04-27 141455" src="https://github.com/user-attachments/assets/d0546bf9-ab95-48f9-8dbd-f5f4d5d45d1c" />
 
 
 
