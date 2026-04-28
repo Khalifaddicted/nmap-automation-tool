@@ -1,6 +1,8 @@
 import os
 import sys
 import datetime
+import subprocess
+import re
 from colorama import Fore, Style, init
 
 init(autoreset=True)
@@ -23,17 +25,53 @@ def save_output(filename, content):
 
     print(Fore.GREEN + f"[+] Results saved to {path}")
 
-def run_nmap(command, target):
-    print(Fore.YELLOW + f"[+] Running scan on {target}...")
-    full_command = f"{command} {target}"
-    result = os.popen(full_command).read()
+def validate_target(target):
+    """Basic validation: accepts IPs, CIDR ranges, and domain names."""
+    ip_pattern = r"^(\d{1,3}\.){3}\d{1,3}(\/\d{1,2})?$"
+    domain_pattern = r"^[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,}$"
+    if re.match(ip_pattern, target) or re.match(domain_pattern, target):
+        return True
+    return False
 
-    if not result.strip():
+def run_nmap(command, target):
+    if not validate_target(target):
+        print(Fore.RED + "[!] Invalid target. Please enter a valid IP address or domain.")
+        return
+
+    print(Fore.YELLOW + f"[+] Running scan on {target}...")
+
+    args = command.split() + [target]
+    output_lines = []
+
+    try:
+        process = subprocess.Popen(
+            args,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True
+        )
+
+        for line in process.stdout:
+            print(line, end="")          # Live output, line by line
+            output_lines.append(line)
+
+        process.wait()
+
+        if process.returncode != 0:
+            print(Fore.RED + "[!] Nmap exited with an error. Check the output above.")
+            return
+
+    except FileNotFoundError:
+        print(Fore.RED + "[!] Nmap not found. Make sure it is installed and in your PATH.")
+        return
+
+    full_output = "".join(output_lines)
+    if not full_output.strip():
         print(Fore.RED + "[!] No output received. Check your target or Nmap installation.")
         return
 
     filename = f"scan_{timestamp()}.txt"
-    save_output(filename, result)
+    save_output(filename, full_output)
 
 # -----------------------------
 # Scan Modes
